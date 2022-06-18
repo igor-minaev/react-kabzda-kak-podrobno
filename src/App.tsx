@@ -4,50 +4,66 @@ import './App.css';
 
 
 function App() {
-    debugger
+    console.log('App rendering')
     return (
 
         <div>
-            This is APP component
+            <AppTitle/>
             <Raiting/>
             <Accordion/>
+            <Raiting/>
         </div>
 
     )
         ;
 }
 
+function AppTitle() {
+    console.log('AppTitle rendering')
+    return <>This is APP component</>
+}
+
 function Raiting() {
-    debugger
+    console.log('Raiting rendering')
     return (
-        <Star/>
+        <>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
+        </>
     )
 }
 
-function Star(){
-    return(
-        <div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-        </div>
-    )
+function Star() {
+    console.log('Star rendering')
+    return <div>star</div>
 }
 
 function Accordion() {
-    debugger
+    console.log('Accordion rendering')
     return (
-        <div>
-            <h3>Меню</h3>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-        </div>
+        <>
+            <AccordionTitle/>
+            <AccordionBody/>
+        </>
+    )
+}
+
+function AccordionTitle() {
+    console.log('AccordionTitle rendering')
+    return <h3>Меню</h3>
+}
+
+function AccordionBody() {
+    console.log('AccordionBody rendering')
+    return (
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
     )
 }
 
