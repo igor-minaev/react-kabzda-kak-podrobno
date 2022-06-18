@@ -20,6 +20,12 @@ function App() {
 function Raiting() {
     debugger
     return (
+        <Star/>
+    )
+}
+
+function Star(){
+    return(
         <div>
             <div>star</div>
             <div>star</div>
