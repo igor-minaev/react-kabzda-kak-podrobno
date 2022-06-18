@@ -9,10 +9,12 @@ function App() {
     return (
 
         <div>
-            <AppTitle/>
+            <PageTitle title={'This is APP component'}/>
+            <PageTitle title={'My friends'}/>
             Article 1
             <Raiting value={3}/>
-            <Accordion/>
+            <Accordion title={'Меню'}/>
+            <Accordion title={'Задачи'}/>
             Article 2
             <Raiting value={4}/>
             <Raiting value={0}/>
@@ -23,11 +25,10 @@ function App() {
         ;
 }
 
-function AppTitle() {
-    console.log('AppTitle rendering')
-    return <div>This is APP component</div>
+function PageTitle(props: any) {
+    console.log('PageTitle rendering')
+    return <div>{props.title}</div>
 }
-
 
 
 export default App;
