@@ -10,9 +10,13 @@ function App() {
 
         <div>
             <AppTitle/>
-            <Raiting/>
+            Article 1
+            <Raiting value={3}/>
             <Accordion/>
-            <Raiting/>
+            Article 2
+            <Raiting value={4}/>
+            <Raiting value={0}/>
+            <Raiting value={5}/>
         </div>
 
     )
@@ -21,7 +25,7 @@ function App() {
 
 function AppTitle() {
     console.log('AppTitle rendering')
-    return <>This is APP component</>
+    return <div>This is APP component</div>
 }
 
 
