@@ -3,16 +3,17 @@ import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Raiting} from "./components/Raiting/Raiting";
 import OnOff from "./components/OnOff/OnOff";
-import {UncontrolledAccordion} from "./components/UncontrolledAccordion/Accordion";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledRaiting} from "./components/UncontrolledRaiting/UncontrolledRaiting";
 
 
 function App() {
     console.log('App rendering')
     return (
-
-        <div>
-            <UncontrolledAccordion titleValue={'Menu'} />
-            <UncontrolledAccordion titleValue={'Tasks'} />
+        <div className={'App'}>
+            <UncontrolledRaiting/>
+            <UncontrolledAccordion titleValue={'Menu'}/>
+            {/*<UncontrolledAccordion titleValue={'Tasks'} />*/}
             {/*<PageTitle title={'This is APP component'}/>*/}
             {/*<PageTitle title={'My friends'}/>*/}
             {/*Article 1*/}
@@ -26,7 +27,7 @@ function App() {
             {/*<Raiting value={3}/>*/}
             {/*<Raiting value={4}/>*/}
             {/*<Raiting value={5}/>*/}
-            {/*<OnOff/>*/}
+            <OnOff/>
             {/*<OnOff on={false}/>*/}
             {/*<OnOff on={false}/>*/}
             {/*<OnOff on={true}/>*/}
@@ -36,7 +37,7 @@ function App() {
         ;
 }
 
-type PageTitlePropsType={
+type PageTitlePropsType = {
     title: string
 }
 

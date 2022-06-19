@@ -7,7 +7,7 @@ type OnOffType = {
 const OnOff = (props: OnOffType) => {
     console.log('OnOff rendering')
     const [on, setOn] = useState<boolean>(true)
-    console.log('on: '+ on)
+    console.log('on: ' + on)
     const onStyle = {
         width: '30px',
         height: '20px',
