@@ -5,21 +5,25 @@ import {Raiting, RatingValueType} from "./components/Raiting/Raiting";
 import OnOff from "./components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRaiting} from "./components/UncontrolledRaiting/UncontrolledRaiting";
+import UncontrolledOnOff from "./components/UncotrolledOnOff/UncontrolledOnOff";
 
 
 function App() {
     console.log('App rendering')
-    let[ratingValue, setRatingValue]=useState<RatingValueType>(0)
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+    let [swithOn, setSwitchOn]=useState<boolean>(false)
     return (
         <div className={'App'}>
-            {/*<UncontrolledRaiting/>*/}
+            <UncontrolledRaiting/>
             <UncontrolledAccordion titleValue={'Menu'}/>
+            <UncontrolledOnOff onChange={setSwitchOn}/> {swithOn.toString()}
             {/*<UncontrolledAccordion titleValue={'Tasks'} />*/}
             {/*<PageTitle title={'This is APP component'}/>*/}
             {/*<PageTitle title={'My friends'}/>*/}
             {/*Article 1*/}
             <Raiting value={ratingValue} onClick={setRatingValue}/>
-            {/*<Accordion titleValue={'Menu'} collapsed={true}/>*/}
+            <Accordion titleValue={'Menu'} collapsed={accordionCollapsed} onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}}/>
             {/*<Accordion titleValue={'Tasks'} collapsed={false}/>*/}
             {/*Article 2*/}
             {/*<Raiting value={0}/>*/}
@@ -28,12 +32,11 @@ function App() {
             {/*<Raiting value={3}/>*/}
             {/*<Raiting value={4}/>*/}
             {/*<Raiting value={5}/>*/}
-            <OnOff/>
-            {/*<OnOff on={false}/>*/}
-            {/*<OnOff on={false}/>*/}
-            {/*<OnOff on={true}/>*/}
+            <OnOff on={swithOn} onChange={setSwitchOn}/>
+            {/*<UncontrolledOnOff on={false}/>*/}
+            {/*<UncontrolledOnOff on={false}/>*/}
+            {/*<UncontrolledOnOff on={true}/>*/}
         </div>
-
     )
         ;
 }
