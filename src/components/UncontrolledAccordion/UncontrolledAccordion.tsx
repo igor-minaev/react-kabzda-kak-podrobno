@@ -10,7 +10,7 @@ export function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
     console.log('Accordion rendering')
     return (
         <div>
-            <AccordionTitle title={props.titleValue}/>
+            <AccordionTitle  title={props.titleValue}/>
             <button onClick={() => {
                 setCollapsed(!collapsed)
             }}>TOGGLE
