@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import {Accordion} from "./components/Accordion";
-import {Raiting} from "./Raiting";
-import OnOff from "./OnOff/OnOff";
+import {Accordion} from "./components/Accordion/Accordion";
+import {Raiting} from "./components/Raiting/Raiting";
+import OnOff from "./components/OnOff/OnOff";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion/Accordion";
 
 
 function App() {
@@ -10,20 +11,22 @@ function App() {
     return (
 
         <div>
-            <PageTitle title={'This is APP component'}/>
-            <PageTitle title={'My friends'}/>
-            Article 1
-            <Raiting value={3}/>
-            <Accordion titleValue={'Menu'} collapsed={true}/>
-            <Accordion titleValue={'Tasks'} collapsed={false}/>
-            Article 2
-            <Raiting value={0}/>
-            <Raiting value={1}/>
-            <Raiting value={2}/>
-            <Raiting value={3}/>
-            <Raiting value={4}/>
-            <Raiting value={5}/>
-            <OnOff/>
+            <UncontrolledAccordion titleValue={'Menu'} />
+            <UncontrolledAccordion titleValue={'Tasks'} />
+            {/*<PageTitle title={'This is APP component'}/>*/}
+            {/*<PageTitle title={'My friends'}/>*/}
+            {/*Article 1*/}
+            {/*<Raiting value={3}/>*/}
+            {/*<Accordion titleValue={'Menu'} collapsed={true}/>*/}
+            {/*<Accordion titleValue={'Tasks'} collapsed={false}/>*/}
+            {/*Article 2*/}
+            {/*<Raiting value={0}/>*/}
+            {/*<Raiting value={1}/>*/}
+            {/*<Raiting value={2}/>*/}
+            {/*<Raiting value={3}/>*/}
+            {/*<Raiting value={4}/>*/}
+            {/*<Raiting value={5}/>*/}
+            {/*<OnOff/>*/}
             {/*<OnOff on={false}/>*/}
             {/*<OnOff on={false}/>*/}
             {/*<OnOff on={true}/>*/}
