@@ -6,6 +6,16 @@ type RatingProps={
 
 export function Raiting(props: RatingProps) {
     console.log('Raiting rendering')
+    return(
+        <div>
+            <Star selected={props.value > 0}/>
+            <Star selected={props.value > 1}/>
+            <Star selected={props.value > 2}/>
+            <Star selected={props.value > 3}/>
+            <Star selected={props.value > 4}/>
+        </div>
+    )
+
     if (props.value === 1)
         return (
             <div>
