@@ -4,7 +4,7 @@ export const Accordion = (props: any) => {
     console.log('Accordion rendering')
     return (
         <div>
-            <AccordionTitle title={props.title}/>
+            <AccordionTitle title={props.titleValue}/>
             <AccordionBody/>
         </div>
     )
