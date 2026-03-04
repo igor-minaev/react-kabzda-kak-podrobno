@@ -9,49 +9,64 @@ import './App.css'
 // hello()
 
 function App() {
-    // eslint-disable-next-line no-debugger
-    debugger
+    console.log("App rendered")
     return (
         <div>
-            <div>This is APP component</div>
-            <Raiting/>
+            <AppTitle/>
             <Raiting/>
             <Accordion/>
+            <Raiting/>
         </div>
     )
 }
 
+function AppTitle() {
+    console.log("AppTitle rendered")
+    return <>This is APP component</>
+}
+
 function Raiting() {
-    // eslint-disable-next-line no-debugger
-    debugger
+    console.log("Rating rendered")
     return (
-        <div>
+        <>
             <Star/>
             <Star/>
             <Star/>
             <Star/>
             <Star/>
-        </div>
+        </>
 
     )
 }
 
 function Star() {
+    console.log("Star rendered")
     return <div>star</div>
 }
 
 function Accordion() {
-    // eslint-disable-next-line no-debugger
-    debugger
+    console.log("Accordion rendered")
     return (
         <div>
-            <h3>Menu</h3>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
+            <AccordionTitle/>
+            <AccordionBody/>
         </div>
+    )
+}
+
+function AccordionTitle() {
+    console.log("AccordionTitle rendered")
+    return <h3>Menu</h3>
+}
+
+function AccordionBody() {
+    console.log("AccordionBody rendered")
+    return (
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
     )
 }
 
