@@ -2,7 +2,7 @@ import './App.css'
 
 function App() {
     return (
-        <div>Hello</div>
+        <div>This is APP component</div>
     )
 }
 
