@@ -1,4 +1,8 @@
-export function Rating(props) {
+type RatingPropsType = {
+    value: 0 | 1 | 2 | 3 | 4 | 5
+}
+
+export function Rating(props: RatingPropsType) {
     console.log("Rating rendered")
     if (props.value === 1) {
         return (
@@ -67,8 +71,11 @@ export function Rating(props) {
     )
 }
 
+type StarPropsType = {
+    selected: boolean
+}
 
-function Star(props) {
+function Star(props: StarPropsType) {
     console.log("Star rendered")
     if (props.selected) {
         return <span> <b>star</b> </span>
