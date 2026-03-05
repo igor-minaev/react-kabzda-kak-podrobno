@@ -1,14 +1,32 @@
- function Accordion(props) {
-    console.log("Accordion rendered")
-    return (
-        <div>
-            <AccordionTitle title={props.title}/>
-            <AccordionBody/>
-        </div>
-    )
+type AccordionPropsType = {
+    titleValue: string
+    collapsed:boolean
 }
 
-function AccordionTitle(props) {
+function Accordion(props: AccordionPropsType) {
+    console.log("Accordion rendered")
+    if(!props.collapsed){
+        return (
+            <div>
+                <AccordionTitle title={props.titleValue}/>
+                <AccordionBody/>
+            </div>
+        )
+    } else{
+        return (
+            <div>
+                <AccordionTitle title={props.titleValue}/>
+            </div>
+        )
+    }
+
+}
+
+type AccordionTitlePropsType = {
+    title: string
+}
+
+function AccordionTitle(props: AccordionTitlePropsType) {
     console.log("AccordionTitle rendered")
     return <h3>{props.title}</h3>
 }
@@ -23,4 +41,5 @@ function AccordionBody() {
         </ul>
     )
 }
+
 export default Accordion
