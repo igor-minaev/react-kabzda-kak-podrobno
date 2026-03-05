@@ -1,16 +1,16 @@
-export function Accordion() {
+ function Accordion(props) {
     console.log("Accordion rendered")
     return (
         <div>
-            <AccordionTitle/>
+            <AccordionTitle title={props.title}/>
             <AccordionBody/>
         </div>
     )
 }
 
-function AccordionTitle() {
+function AccordionTitle(props) {
     console.log("AccordionTitle rendered")
-    return <h3>Menu</h3>
+    return <h3>{props.title}</h3>
 }
 
 function AccordionBody() {
@@ -23,3 +23,4 @@ function AccordionBody() {
         </ul>
     )
 }
+export default Accordion
