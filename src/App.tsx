@@ -1,6 +1,7 @@
 import './App.css'
 import Accordion from "./components/Accordion/Accordion.tsx";
 import {Rating} from "./components/Rating/Rating.tsx";
+import OnOff from "./components/onOff/OnOff.tsx";
 
 // function hello() {
 //     // eslint-disable-next-line no-debugger
@@ -27,6 +28,8 @@ function App() {
             <Accordion titleValue="Users" collapsed={false}/>
             Article 2
             <Rating value={4}/>
+            <OnOff on={true}/>
+            <OnOff on={false}/>
         </div>
     )
 }
