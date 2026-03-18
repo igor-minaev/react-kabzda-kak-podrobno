@@ -3,13 +3,6 @@ import Accordion from "./components/Accordion/Accordion.tsx";
 import {Rating} from "./components/Rating/Rating.tsx";
 import OnOff from "./components/onOff/OnOff.tsx";
 
-// function hello() {
-//     // eslint-disable-next-line no-debugger
-//     debugger
-//     alert("hello Im Igor")
-// }
-
-// hello()
 
 function App() {
     console.log("App rendered")
@@ -28,8 +21,10 @@ function App() {
             <Accordion titleValue="Users" collapsed={false}/>
             Article 2
             <Rating value={4}/>
-            <OnOff on={true}/>
-            <OnOff on={false}/>
+            {/*<OnOff on={true}/>*/}
+            {/*<OnOff on={false}/>*/}
+            <OnOff/>
+            <OnOff/>
         </div>
     )
 }
