@@ -2,6 +2,8 @@ import './App.css'
 import Accordion from "./components/Accordion/Accordion.tsx";
 import {Rating} from "./components/Rating/Rating.tsx";
 import OnOff from "./components/onOff/OnOff.tsx";
+import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion.tsx";
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating.tsx";
 
 
 function App() {
@@ -25,6 +27,9 @@ function App() {
             {/*<OnOff on={false}/>*/}
             <OnOff/>
             <OnOff/>
+            <UncontrolledAccordion titleValue="Menu"/>
+            <UncontrolledAccordion titleValue="Users"/>
+            <UncontrolledRating/>
         </div>
     )
 }

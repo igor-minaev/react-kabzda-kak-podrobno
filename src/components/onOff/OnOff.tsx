@@ -1,10 +1,11 @@
 import {useState} from "react";
 
-type OnOffPropsType = {
-    // on: boolean
-}
-export const OnOff = (props: OnOffPropsType) => {
+
+export const OnOff = () => {
+    console.log("OnOff rendered")
+
     const [on, setOn] = useState(false)
+
     const onStyle = {
         display: "inline-block",
         width: "40px",
