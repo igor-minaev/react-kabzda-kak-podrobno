@@ -1,7 +1,11 @@
 import {useState} from "react";
 
+type UncontrolledOnOffPropsType = {
+    onChange: (on: boolean) => void
+}
 
-export const UncontrolledOnOff = () => {
+
+export const UncontrolledOnOff = (props: UncontrolledOnOffPropsType) => {
     console.log("UncontrolledOnOff rendered")
 
     const [on, setOn] = useState(false)
@@ -29,13 +33,20 @@ export const UncontrolledOnOff = () => {
         border: "2px solid black"
     }
 
+    const onClicked = () => {
+        setOn(true)
+        props.onChange(true)
+    }
+
+    const offClicked = () => {
+        setOn(false)
+        props.onChange(false)
+    }
+
     return (
         <div style={{display: "flex", alignItems: "center", gap: "5px", marginBottom: "20px"}}>
-            <span style={onStyle} onClick={() =>
-                setOn(true)}>on</span>
-            <span style={offStyle} onClick={() =>
-                setOn(false)
-            }>off</span>
+            <span style={onStyle} onClick={onClicked}>on</span>
+            <span style={offStyle} onClick={offClicked}>off</span>
             <span style={lightStyle}></span>
         </div>
     );

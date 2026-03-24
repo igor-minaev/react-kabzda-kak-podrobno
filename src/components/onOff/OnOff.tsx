@@ -1,6 +1,6 @@
 type OnOffPropsType = {
     on: boolean
-    onClick: (on: boolean) => void
+    onChange: (on: boolean) => void
 }
 export const OnOff = (props: OnOffPropsType) => {
     console.log("UncontrolledOnOff rendered")
@@ -32,9 +32,9 @@ export const OnOff = (props: OnOffPropsType) => {
     return (
         <div style={{display: "flex", alignItems: "center", gap: "5px", marginBottom: "20px"}}>
             <span style={onStyle} onClick={() =>
-                props.onClick(true)}>on</span>
+                props.onChange(true)}>on</span>
             <span style={offStyle} onClick={() =>
-                props.onClick(false)
+                props.onChange(false)
             }>off</span>
             <span style={lightStyle}></span>
         </div>
