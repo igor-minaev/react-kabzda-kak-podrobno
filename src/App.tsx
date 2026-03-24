@@ -30,6 +30,7 @@ function App() {
             <UncontrolledAccordion titleValue="Menu"/>
             <UncontrolledAccordion titleValue="Users"/>
             <UncontrolledRating/>
+            <UncontrolledRating/>
         </div>
     )
 }
