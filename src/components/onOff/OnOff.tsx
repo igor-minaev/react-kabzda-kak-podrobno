@@ -1,30 +1,30 @@
-import {useState} from "react";
+type OnOffPropsType = {
+    on: boolean
+    onClick: (on: boolean) => void
+}
+export const OnOff = (props: OnOffPropsType) => {
+    console.log("UncontrolledOnOff rendered")
 
-
-export const OnOff = () => {
-    console.log("OnOff rendered")
-
-    const [on, setOn] = useState(false)
 
     const onStyle = {
         display: "inline-block",
         width: "40px",
         height: "30px",
-        backgroundColor: on ? "green" : "white",
+        backgroundColor: props.on ? "green" : "white",
         border: "2px solid black",
     }
     const offStyle = {
         display: "inline-block",
         width: "40px",
         height: "30px",
-        backgroundColor: !on ? "red" : "white",
+        backgroundColor: !props.on ? "red" : "white",
         border: "2px solid black"
     }
     const lightStyle = {
         display: "inline-block",
         width: "30px",
         height: "30px",
-        backgroundColor: on ? "green" : "red",
+        backgroundColor: props.on ? "green" : "red",
         borderRadius: "50%",
         border: "2px solid black"
     }
@@ -32,9 +32,9 @@ export const OnOff = () => {
     return (
         <div style={{display: "flex", alignItems: "center", gap: "5px", marginBottom: "20px"}}>
             <span style={onStyle} onClick={() =>
-                setOn(true)}>on</span>
+                props.onClick(true)}>on</span>
             <span style={offStyle} onClick={() =>
-                setOn(false)
+                props.onClick(false)
             }>off</span>
             <span style={lightStyle}></span>
         </div>
@@ -48,7 +48,7 @@ export default OnOff;
 // type OnOffPropsType = {
 //     on: boolean
 // }
-// export const OnOff = ({on}: OnOffPropsType) => {
+// export const UncontrolledOnOff = ({on}: OnOffPropsType) => {
 //     const onStyle = {
 //         display: "inline-block",
 //         width: "40px",
@@ -81,4 +81,4 @@ export default OnOff;
 //     );
 // };
 //
-// export default OnOff;
+// export default UncontrolledOnOff;

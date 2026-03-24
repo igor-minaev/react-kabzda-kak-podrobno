@@ -1,32 +1,30 @@
 import './App.css'
 import Accordion from "./components/Accordion/Accordion.tsx";
-import {Rating} from "./components/Rating/Rating.tsx";
+import {Rating, type RatingValueType} from "./components/Rating/Rating.tsx";
 import OnOff from "./components/onOff/OnOff.tsx";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion.tsx";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating.tsx";
+import {useState} from "react";
+import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff.tsx";
 
 
 function App() {
     console.log("App rendered")
+
+    const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+    const [onValue, setOnValue] = useState<boolean>(false)
+
     return (
         <div className="App">
+            Article 1
             <PageTitle title="This is APP component"/>
             <PageTitle title="My friends"/>
-            Article 1
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
-            <Accordion titleValue="Menu" collapsed={true}/>
-            <Accordion titleValue="Users" collapsed={false}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <Accordion titleValue="Menu" collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
+            <OnOff on={onValue} onClick={setOnValue}/>
             Article 2
-            <Rating value={4}/>
-            {/*<OnOff on={true}/>*/}
-            {/*<OnOff on={false}/>*/}
-            <OnOff/>
-            <OnOff/>
+            <UncontrolledOnOff/>
             <UncontrolledAccordion titleValue="Menu"/>
             <UncontrolledAccordion titleValue="Users"/>
             <UncontrolledRating/>
