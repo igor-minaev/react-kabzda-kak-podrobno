@@ -1,8 +1,10 @@
 import type {Meta, StoryObj} from '@storybook/react-vite';
+import { action } from 'storybook/actions';
 
 import {fn} from 'storybook/test';
 
 import Accordion from './Accordion.tsx';
+import {useState} from "react";
 
 export const ActionsData = {
     onChange: fn(),
@@ -36,3 +38,29 @@ export const Uncollapsed: Story = {
         collapsed: false,
     },
 };
+
+export const Default: Story = {
+    args: {
+        titleValue: 'Menu',
+        collapsed: true,
+    },
+    render: (args) => {
+        const [collapsed, setCollapsed] = useState(args.collapsed ?? true)
+        return (
+            <Accordion
+                {...args}
+                collapsed={collapsed}
+                onChange={() => {
+                    setCollapsed(!collapsed);
+                    args.onChange?.();
+                }}
+            />
+        );
+    }
+};
+
+const onChangeCallback = action('onChange')
+
+export const CollapsedAccordion = () => {
+    return <Accordion collapsed={true} titleValue="Users" onChange={onChangeCallback}/>
+}
