@@ -2,13 +2,14 @@ import {useState} from "react";
 
 type UncontrolledOnOffPropsType = {
     onChange: (on: boolean) => void
+    defaultOn?: boolean
 }
 
 
 export const UncontrolledOnOff = (props: UncontrolledOnOffPropsType) => {
     console.log("UncontrolledOnOff rendered")
 
-    const [on, setOn] = useState(false)
+    const [on, setOn] = useState(props.defaultOn ?? false)
 
     const onStyle = {
         display: "inline-block",
