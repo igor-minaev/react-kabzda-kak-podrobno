@@ -1,7 +1,7 @@
 import './App.css'
 import Accordion from "./components/Accordion/Accordion.tsx";
 import {Rating, type RatingValueType} from "./components/Rating/Rating.tsx";
-import OnOff from "./components/onOff/OnOff.tsx";
+import OnOff from "./components/OnOff/OnOff.tsx";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion.tsx";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating.tsx";
 import {useState} from "react";
