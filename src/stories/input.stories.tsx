@@ -26,6 +26,8 @@ export const GetValueOfOfUncontrolledInputByButtonPress = () => {
 
 }
 
+export const ControlledInput = () => <input/>
+
 export const ControlledInputWithFixedValue = () => <input value='it-incubator.by'/>
 
 
