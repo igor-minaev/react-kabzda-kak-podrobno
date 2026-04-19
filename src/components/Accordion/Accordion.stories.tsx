@@ -1,5 +1,5 @@
 import type {Meta, StoryObj} from '@storybook/react-vite';
-import { action } from 'storybook/actions';
+import {action} from 'storybook/actions';
 
 import {fn} from 'storybook/test';
 
@@ -63,4 +63,16 @@ const onChangeCallback = action('onChange')
 
 export const CollapsedAccordion = () => {
     return <Accordion collapsed={true} titleValue="Users" onChange={onChangeCallback}/>
+}
+
+const callBack = () => action('accordion want to change')
+
+export const MenuCollapsedMode = () => <Accordion titleValue="Menu" collapsed={true} onChange={callBack}/>
+
+export const UsersUncollapsedMode = () => <Accordion titleValue="Users" collapsed={false} onChange={callBack}/>
+
+
+export const ModeChanging = () => {
+    const [value, setValue] = useState<boolean>(true)
+    return <Accordion titleValue="Users" collapsed={value} onChange={()=>setValue(!value)}/>
 }

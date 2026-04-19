@@ -2,7 +2,7 @@ import type {RatingValueType} from "../Rating/Rating.tsx";
 
 type RatingPropsType = {
     defaultValue?: RatingValueType
-    onChange: (value: RatingValueType) => void
+    onChange?: (value: RatingValueType) => void
 }
 
 import {useState} from "react";
