@@ -21,7 +21,7 @@ function App() {
             <PageTitle title="This is APP component"/>
             <PageTitle title="My friends"/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Accordion titleValue="Menu" collapsed={accordionCollapsed} onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
+            <Accordion titleValue="Menu" collapsed={accordionCollapsed} onChange={() => setAccordionCollapsed(!accordionCollapsed)} items={[{title: 'Dimych', value: 1}, {title: 'Valera', value: 2}, {title: 'Artem', value: 3}, {title: 'Viktor', value: 4}]} onClick={()=>{}}/>
             <OnOff on={onValue} onChange={setOnValue}/>
             Article 2
             <UncontrolledOnOff onChange={setOnValue}/> {onValue.toString()}
