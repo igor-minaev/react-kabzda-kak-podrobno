@@ -2,12 +2,12 @@ import {useState} from "react";
 
 type ItemType = {
     title: string
-    value: number
+    value: string
 }
 
 type SelectPropsType = {
-    value: number
-    onChange: (value: number) => void
+    value: string
+    onChange: (value: string) => void
     items: ItemType[]
 }
 export const Select = (props: SelectPropsType) => {
@@ -16,9 +16,9 @@ export const Select = (props: SelectPropsType) => {
 
     return (
         <div>
-            <div onClick={() => setUncollapsed(true)} onBlur={() => setUncollapsed(false)}>{chosenElement?.title}</div>
+            <div onClick={() => setUncollapsed(true)} onBlur={() => setUncollapsed(false)}>{chosenElement && chosenElement.title}</div>
 
-            {uncollapsed && props.items.map(i => <div onClick={() => {
+            {uncollapsed && props.items.map(i => <div key={i.value} onClick={() => {
                 props.onChange(i.value)
                 setUncollapsed(false)
             }
