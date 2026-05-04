@@ -1,18 +1,28 @@
+import {useState} from "react";
+
 type ItemType = {
     title: string
-    value: any
+    value: number
 }
 
-type SelecyPropsType = {
-    value: any
-    onChange: (value: any) => void
+type SelectPropsType = {
+    value: number
+    onChange: (value: number) => void
     items: ItemType[]
 }
-export const Select = (props: SelecyPropsType) => {
+export const Select = (props: SelectPropsType) => {
+    const [uncollapsed, setUncollapsed] = useState(false)
+    const chosenElement = props.items.find(i => i.value === props.value)
+
     return (
         <div>
-            <div>{}</div>
-            {props.items.map(i => <div>{i.title}</div>)}
+            <div onClick={() => setUncollapsed(true)} onBlur={() => setUncollapsed(false)}>{chosenElement?.title}</div>
+
+            {uncollapsed && props.items.map(i => <div onClick={() => {
+                props.onChange(i.value)
+                setUncollapsed(false)
+            }
+            }>{i.title}</div>)}
         </div>
     );
 };
