@@ -1,9 +1,9 @@
 import type {Meta, StoryObj} from '@storybook/react-vite';
-import {action} from 'storybook/actions';
 
 import {fn} from 'storybook/test';
 
 import {Select} from './Select.tsx';
+import {useState} from "react";
 
 
 export const ActionsData = {
@@ -26,9 +26,21 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 
-export const Empty = () => <Select onChange={action('value changed')} value = {'1'} items={[
-    {value: '1', title: 'Minsk'},
-    {value: '2', title: 'Moscow'},
-    {value: '3', title: 'Kiev'}
-]}/>
+export const WithValue = () => {
+    const [value,setValue]=useState<string | null>('2')
+    return <Select onChange={setValue} value = {value} items={[
+        {value: '1', title: 'Minsk'},
+        {value: '2', title: 'Moscow'},
+        {value: '3', title: 'Kiev'}
+    ]}/>
+}
+
+export const WithoutValue = () => {
+    const [value,setValue]=useState<string | null>(null)
+    return <Select onChange={setValue} value={value} items={[
+        {value: '1', title: 'Minsk'},
+        {value: '2', title: 'Moscow'},
+        {value: '3', title: 'Kiev'}
+    ]}/>
+}
 
