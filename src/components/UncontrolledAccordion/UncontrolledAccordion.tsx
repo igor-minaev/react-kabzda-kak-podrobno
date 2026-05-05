@@ -4,6 +4,10 @@ type UncontrolledAccordionPropsType = {
     titleValue: string
 }
 
+const reducer = (state:boolean, action) => {
+    return state
+}
+
 function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
     console.log("UncontrolledAccordion rendered")
     const [collapsed, setCollapsed] = useState(true)
