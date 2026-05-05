@@ -6,7 +6,7 @@ import UncontrolledAccordion from "./components/UncontrolledAccordion/Uncontroll
 // import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating.tsx";
 import {useState} from "react";
 import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff.tsx";
-import {Select} from "./components/Select/Select.tsx";
+// import {Select} from "./components/Select/Select.tsx";
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     const [onValue, setOnValue] = useState<boolean>(false)
-    const [value, setValue] = useState('1')
+    // const [value, setValue] = useState('1')
 
     return (
         <div className="App">
@@ -31,8 +31,8 @@ function App() {
             <UncontrolledAccordion titleValue="Users"/>
             {/*<UncontrolledRating/>*/}
             {/*<UncontrolledRating/>*/}
-            <Select value={value} onChange={setValue} items={[{value: '1', title: 'Minsk'},
-                {value: '2', title: 'Moscow'}, {value: '3', title: 'Kiev'}]}/>
+            {/*<Select value={value} onChange={setValue} items={[{value: '1', title: 'Minsk'},*/}
+            {/*    {value: '2', title: 'Moscow'}, {value: '3', title: 'Kiev'}]}/>*/}
         </div>
     )
 }
