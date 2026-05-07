@@ -1,7 +1,9 @@
 import {useEffect, useState, type KeyboardEvent} from "react";
 import styles from './Select.module.css'
 
-type ItemType = {
+export type ItemType = {
+    id?: string
+    countryId?: 'Belarus' | 'Russia'
     title: string
     value: string
 }
@@ -12,6 +14,7 @@ type SelectPropsType = {
     items: ItemType[]
 }
 export const Select = (props: SelectPropsType) => {
+    console.log('Select')
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
     const chosenElement = props.items.find(i => i.value === props.value)
