@@ -17,7 +17,9 @@ export const DifficultCountingExample = () => {
             let fake = 0
             while (fake < 100000000) {
                 fake++
-                const fakeValue = Math.random()
+
+                const fakeValue = crypto.randomUUID()
+                console.log(fakeValue)
             }
             temp = temp * i
         }
@@ -67,3 +69,34 @@ export const HelpsToReactMemo = () => {
         < Users users={newArray}/>
     </>
 }
+
+export const LikeUseCallback = () => {
+    console.log('LikeUseCallback')
+    const [counter, setCounter] = useState(0)
+    const [books, setBooks] = useState<string[]>(['react', 'js', 'html', 'css'])
+
+    const newArray = useMemo(() => {
+        return books.filter(u => u.toLowerCase().indexOf('a') > -1)
+    }, [books])
+
+    const addBook = () => {
+        setBooks([...books, `angular ${new Date().getTime()}`])
+    }
+
+    return <>
+        <button onClick={() => setCounter(counter + 1)}>+</button>
+        <button onClick={addBook}>add book</button>
+        {counter}
+        < Books books={newArray}/>
+    </>
+}
+
+
+const BooksSecret = (props: { books: string[] }) => {
+    console.log('books')
+    return <div>
+        {props.books.map((b, i) => <div key={i}>{b}</div>)}
+    </div>
+}
+
+const Books = React.memo(BooksSecret)
