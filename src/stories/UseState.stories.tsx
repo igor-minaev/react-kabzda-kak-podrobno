@@ -1,4 +1,3 @@
-import React from "react"
 import {useState} from "react"
 
 export default {
@@ -6,19 +5,24 @@ export default {
 }
 
 
+function generateData() {
+    console.log('generate data')
+    return 1
+}
 
 export const Example1 = () => {
-    console.log('example')
-    const [counter, setCounter] = useState(0)
-    const [users, setUsers] = useState<string[]>(['Dimych', 'Valera', 'Artem'])
 
-    const addUser = () => {
-        setUsers([...users, `Sveta ${new Date().getTime()}`])
-    }
+    console.log('example')
+
+    // const initValue = useMemo(generateData, [])
+    const [counter, setCounter] = useState(generateData)
+
+    // const changer = (state:number) => state + 1
+
     return <>
-        <button onClick={() => setCounter(counter + 1)}>+</button>
-        <button onClick={addUser}>add user</button>
-        <NewMessagesCounter count={counter}/>
-        <Users users={users}/>
+        {/*<button onClick={() => setCounter(counter + 1)}>+</button>*/}
+        {/*<button onClick={() => setCounter(changer)}>+</button>*/}
+        <button onClick={() => setCounter((state) => state + 1)}>+</button>
+        {counter}
     </>
 }
