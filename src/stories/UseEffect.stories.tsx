@@ -79,9 +79,9 @@ export const Watches = () => {
 
     console.log('Watches')
 
-    const [hour, setHour] = useState<null | number>(null)
-    const [minute, setMinute] = useState<null | number>(null)
-    const [second, setSecond] = useState<null | number>(null)
+    const [hour, setHour] = useState(new Date().getHours())
+    const [minute, setMinute] = useState(new Date().getMinutes())
+    const [second, setSecond] = useState(new Date().getSeconds())
 
     useEffect(() => {
         const timeInterval = setInterval(() => {
@@ -97,9 +97,7 @@ export const Watches = () => {
     }, [])
 
 
-
-    const getFormattedTime = (time: number | null) => {
-        if (time === null) return
+    const getFormattedTime = (time: number) => {
         return time < 10 ? `0${time}` : `${time}`
     }
 
