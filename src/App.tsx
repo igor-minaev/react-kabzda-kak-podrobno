@@ -6,6 +6,8 @@ import UncontrolledAccordion from "./components/UncontrolledAccordion/Uncontroll
 // import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating.tsx";
 import {useState} from "react";
 import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff.tsx";
+import {Clock} from "./components/Clock/Clock";
+
 // import {Select} from "./components/Select/Select.tsx";
 
 
@@ -23,7 +25,11 @@ function App() {
             <PageTitle title="This is APP component"/>
             <PageTitle title="My friends"/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Accordion titleValue="Menu" collapsed={accordionCollapsed} onChange={() => setAccordionCollapsed(!accordionCollapsed)} items={[{title: 'Dimych', value: 1}, {title: 'Valera', value: 2}, {title: 'Artem', value: 3}, {title: 'Viktor', value: 4}]} onClick={()=>{}}/>
+            <Accordion titleValue="Menu" collapsed={accordionCollapsed} onChange={() => setAccordionCollapsed(!accordionCollapsed)} items={[{
+                title: 'Dimych',
+                value: 1
+            }, {title: 'Valera', value: 2}, {title: 'Artem', value: 3}, {title: 'Viktor', value: 4}]} onClick={() => {
+            }}/>
             <OnOff on={onValue} onChange={setOnValue}/>
             Article 2
             <UncontrolledOnOff onChange={setOnValue}/> {onValue.toString()}
@@ -33,6 +39,8 @@ function App() {
             {/*<UncontrolledRating/>*/}
             {/*<Select value={value} onChange={setValue} items={[{value: '1', title: 'Minsk'},*/}
             {/*    {value: '2', title: 'Moscow'}, {value: '3', title: 'Kiev'}]}/>*/}
+            <hr/>
+            <Clock/>
         </div>
     )
 }

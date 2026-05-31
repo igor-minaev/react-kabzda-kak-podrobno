@@ -79,16 +79,11 @@ export const Watches = () => {
 
     console.log('Watches')
 
-    const [hour, setHour] = useState(new Date().getHours())
-    const [minute, setMinute] = useState(new Date().getMinutes())
-    const [second, setSecond] = useState(new Date().getSeconds())
-
+    const [date, setDate] = useState(new Date())
     useEffect(() => {
         const timeInterval = setInterval(() => {
             console.log('interval counting')
-            setHour(new Date().getHours())
-            setMinute(new Date().getMinutes())
-            setSecond(new Date().getSeconds())
+            setDate(new Date())
         }, 1000)
         return () => {
             console.log('cleanup');
@@ -103,7 +98,7 @@ export const Watches = () => {
 
 
     return <>
-        {getFormattedTime(hour)}:{getFormattedTime(minute)}:{getFormattedTime(second)}
+        {getFormattedTime(date.getHours())}:{getFormattedTime(date.getMinutes())}:{getFormattedTime(date.getSeconds())}
     </>
 }
 
